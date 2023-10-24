@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
-
-import com.example.cadastrologin.activity.Cadastro2;
 import com.example.cadastrologin.helper.DBhelper;
 import com.example.cadastrologin.model.User;
 
