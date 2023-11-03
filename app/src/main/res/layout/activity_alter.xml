@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cadastro_background"
-    tools:context=".activity.Cadastro">
+    tools:context=".activity.Alter">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -19,11 +19,11 @@
         app:srcCompat="@drawable/lua_2_removebg_preview" />
 
     <TextView
-        android:id="@+id/titleSignUp"
+        android:id="@+id/titleAlter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="Create Your Acoount"
+        android:text="Modify your data"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,60 +31,54 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/edtUsername"
+        android:id="@+id/edtUsernameAlter"
         style="@style/edts"
         android:hint="Username"
         android:inputType="text"
+        android:layout_height="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/titleAlter" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtEmailAlter"
         android:hint="Email"
         android:inputType="textEmailAddress"
         style="@style/edts"
+        android:layout_height="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUsernameAlter" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/edtPasswordAlter"
         style="@style/edts"
+        android:layout_height="48dp"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailAlter" />
 
     <EditText
-        android:id="@+id/edtPasswordConfirm"
+        android:id="@+id/edtPasswordConfirmAlter"
         style="@style/edts"
+        android:layout_height="48dp"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordAlter" />
 
     <Button
-        android:id="@+id/btnSign"
+        android:id="@+id/btnAlter"
         android:backgroundTint="#6582B1"
-        android:text="SIGN UP"
+        android:text="CHANGE DATA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPasswordConfirm"
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordConfirmAlter"
         style="@style/btn" />
 
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:text="LOGIN"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSign" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

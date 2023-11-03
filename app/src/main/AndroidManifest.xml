@@ -12,9 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CadastroLogin"
         tools:targetApi="31">
-
         <activity
-            android:name=".activity.Cadastro"
+            android:name=".activity.Delete"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Update"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Alter"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Main"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +33,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".activity.Login"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Cadastro"
+            android:exported="true" />
     </application>
 
 </manifest>

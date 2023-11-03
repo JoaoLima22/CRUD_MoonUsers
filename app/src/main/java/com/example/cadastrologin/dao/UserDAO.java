@@ -18,8 +18,6 @@ public class UserDAO {
 
     public void signUp(){
         SQLiteDatabase dbLite = this.db.getWritableDatabase();
-        //String sql = "INSERT INTO user (mail, username, password) values ('?', '?', '?');";
-        //Cursor cursor = dbLite.rawQuery(sql, new String[]{user.getMail(), user.getUsername(), user.getPassword()});
 
         ContentValues content = new ContentValues();
         content.put("mail", user.getMail());
@@ -29,6 +27,44 @@ public class UserDAO {
         long id = dbLite.insert("user", null, content);
 
         //dbLite.execSQL(sql);
+    }
+    public User getUserByMail(){
+        SQLiteDatabase dbLite = this.db.getReadableDatabase();
+
+        //Especifico o que quero que retorne.
+        String[] projection = {
+                "mail",
+                "username",
+                "password"
+        };
+        // Define o filtro
+        // Onde WHERE selection = selectionArgs
+        String selection = "mail = ?";
+        String[] selectionArgs = {user.getMail()};
+
+        // Pelo que e como eu ordeno os valores
+        String sortOrder = "username DESC";
+
+        //Executo o query
+        Cursor c = dbLite.query(
+                "user",            // A tabela
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        if(c != null){
+            c.moveToFirst();
+        }
+        User user = new User();
+        user.setMail(c.getString(0));
+        user.setUsername(c.getString(1));
+        user.setPassword(c.getString(2));
+
+        return user;
     }
 
     public boolean signUpVality(){
@@ -66,6 +102,30 @@ public class UserDAO {
             return true;
         }
 
+        return false;
+    }
+
+    public boolean update(String mail){
+        SQLiteDatabase dbLite = this.db.getWritableDatabase();
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put("mail", user.getMail());
+        values.put("username", user.getUsername());
+        values.put("password", user.getPassword());
+
+        // Which row to update, based on the title
+        String selection = "mail LIKE ?";
+        String[] selectionArgs = {mail};
+
+        int count = dbLite.update(
+                "user",
+                values,
+                selection,
+                selectionArgs);
+
+        if (count > 0){
+            return true;
+        }
         return false;
     }
 }
