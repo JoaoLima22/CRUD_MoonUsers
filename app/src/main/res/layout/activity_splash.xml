@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/lua_2_removebg_preview" />
 
     <TextView
-        android:id="@+id/titleSignUp"
+        android:id="@+id/titleSlpash"
         android:layout_width="378dp"
         android:layout_height="88dp"
         android:fontFamily="sans-serif-medium"
@@ -41,6 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/titleSlpash" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cadastro_background"
     tools:context=".activity.Delete">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="219dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lua_2_removebg_preview" />
+
+    <TextView
+        android:id="@+id/titleDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Deleting Acoount:"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/txtUsernameDelete"
+        style="@style/txtStyle"
+        android:layout_marginTop="30dp"
+        android:text="Username:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDelete" />
+
+    <TextView
+        android:id="@+id/txtUsernameUserDelete"
+        style="@style/txtStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="USERNAME"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUsernameDelete" />
+
+    <TextView
+        android:id="@+id/txtMailDelete"
+        style="@style/txtStyle"
+        android:layout_marginTop="15dp"
+        android:text="Mail:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUsernameUserDelete" />
+
+    <TextView
+        android:id="@+id/txtMailUserDelete"
+        style="@style/txtStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="MAIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMailDelete" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:backgroundTint="#6582B1"
+        android:text="DELETE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMailUserDelete"
+        style="@style/btn"
+        android:textSize="14sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

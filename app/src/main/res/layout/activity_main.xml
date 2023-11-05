@@ -101,7 +101,7 @@
     <Button
         android:id="@+id/btnLoggout"
         android:backgroundTint="#6582B1"
-        android:text="LOGOUT "
+        android:text="LOGOUT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/btn"

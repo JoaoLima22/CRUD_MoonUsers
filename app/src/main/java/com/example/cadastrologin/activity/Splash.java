@@ -2,7 +2,9 @@ package com.example.cadastrologin.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.cadastrologin.R;
@@ -21,9 +23,17 @@ public class Splash extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent it = new Intent(Splash.this, Login.class);
-                startActivity(it);
+                SharedPreferences sp = getSharedPreferences("MoonUsers", Context.MODE_PRIVATE);
+                String auxMail = sp.getString("mail", "");
+
+                if(auxMail.equals("")) {
+                    Intent it = new Intent(Splash.this, Login.class);
+                    startActivity(it);
+                } else {
+                    Intent it = new Intent(Splash.this, Login.class);
+                    startActivity(it);
+                }
             }
-        }, 5000);
+        }, 3000);
     }
 }

@@ -19,9 +19,6 @@
             android:name=".activity.Update"
             android:exported="true" />
         <activity
-            android:name=".activity.Alter"
-            android:exported="true" />
-        <activity
             android:name=".activity.Main"
             android:exported="true" />
         <activity
@@ -37,7 +34,7 @@
             android:name=".activity.Login"
             android:exported="true" />
         <activity
-            android:name=".activity.Cadastro"
+            android:name=".activity.SignUp"
             android:exported="true" />
     </application>
 

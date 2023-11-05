@@ -1,7 +1,6 @@
 package com.example.cadastrologin.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,15 +23,22 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        SharedPreferences sp = getSharedPreferences("MoonUsers", Context.MODE_PRIVATE);
+        String auxMail = sp.getString("mail", "");
+        if(!auxMail.equals("")){
+            Intent it = new Intent(Login.this, Main.class);
+            startActivity(it);
+        }
+
         btnLogin = findViewById(R.id.btnLogin);
-        txtmail = findViewById(R.id.edtEmailLogin);
+        txtmail = findViewById(R.id.edtMailLogin);
         txtpass = findViewById(R.id.edtPasswordLogin);
         tvSign = findViewById(R.id.tvSign);
 
         tvSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(Login.this, Cadastro.class);
+                Intent it = new Intent(Login.this, SignUp.class);
                 startActivity(it);
             }
         });
@@ -44,12 +50,12 @@ public class Login extends AppCompatActivity {
                 mail = txtmail.getText().toString();
                 pass = txtpass.getText().toString();
 
-                if(mail.equals("")){txtmail.setError("Preencha este campo!");}
-                if(pass.equals("")){txtpass.setError("Preencha este campo!");}
+                if(mail.equals("")){txtmail.setError("Fill this field!");}
+                if(pass.equals("")){txtpass.setError("Fill this field!");}
 
                 if (mail.equals("") || pass.equals("")){
                     //Testo campos vazios
-                    Toast.makeText(Login.this, "Preencha ambos os campos!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Fill both fields!", Toast.LENGTH_SHORT).show();
                 } else{
                     User user = new User();
                     user.setMail(mail);
@@ -58,16 +64,16 @@ public class Login extends AppCompatActivity {
                     UserDAO uDAO = new UserDAO(getApplicationContext(), user);
                     if(uDAO.signUpVality()==false){
                         txtmail.setText("");
-                        txtmail.setError("Dados inválidos!");
+                        txtmail.setError("Invalid data!");
                         txtpass.setText("");
-                        txtpass.setError("Dados inválidos!");
+                        txtpass.setError("Invalid data!");
                     } else{
                         User auxUser = uDAO.getUserByMail();
 
                         if(!auxUser.getPassword().equals(user.getPassword())){
-                            Toast.makeText(Login.this, "Senha inválida!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Invalid password!", Toast.LENGTH_SHORT).show();
                             txtpass.setText("");
-                            txtpass.setError("Senha Inválida");
+                            txtpass.setError("Invalid password!");
                         } else{
                             // Login permitido
                             SharedPreferences sp = getSharedPreferences("MoonUsers", Context.MODE_PRIVATE);

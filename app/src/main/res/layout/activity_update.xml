@@ -41,8 +41,8 @@
         app:layout_constraintTop_toBottomOf="@+id/titleUpdate" />
 
     <EditText
-        android:id="@+id/edtEmailUpdate"
-        android:hint="Email"
+        android:id="@+id/edtMailUpdate"
+        android:hint="Mail"
         android:inputType="textEmailAddress"
         style="@style/edts"
         android:layout_height="48dp"
@@ -58,13 +58,13 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMailUpdate" />
 
     <EditText
         android:id="@+id/edtPasswordConfirmUpdate"
         style="@style/edts"
         android:layout_height="48dp"
-        android:hint="Confirm Password"
+        android:hint="Confirm your Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

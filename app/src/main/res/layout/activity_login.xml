@@ -31,8 +31,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/edtEmailLogin"
-        android:hint="Email"
+        android:id="@+id/edtMailLogin"
+        android:hint="Mail"
         android:inputType="textEmailAddress"
         style="@style/edts"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMailLogin" />
 
     <Button
         android:id="@+id/btnLogin"
