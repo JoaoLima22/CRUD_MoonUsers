@@ -114,4 +114,16 @@ public class UserDAO {
         if(deletedRows>0){return true;}
         return false;
     }
+
+    public Cursor listUsers(){
+        SQLiteDatabase dbLite = this.db.getReadableDatabase();
+
+        String sql = "SELECT mail as _id, username From user ORDER BY username ASC;";
+
+        Cursor c = dbLite.rawQuery(sql, null);
+
+        //Movo o cursor para o primeiro valor
+        if(c != null){c.moveToFirst();}
+        return c;
+    }
 }

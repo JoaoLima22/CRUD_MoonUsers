@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CadastroLogin"
         tools:targetApi="31">
         <activity
+            android:name=".activity.List"
+            android:exported="false" />
+        <activity
             android:name=".activity.Delete"
             android:exported="false" />
         <activity
