@@ -61,8 +61,6 @@ public class Main extends AppCompatActivity {
             mail.setText(personEmail);
         }
 
-
-
         btnAlter = findViewById(R.id.btnAlter);
         btnDelete = findViewById(R.id.btnDelete);
         btnLogout = findViewById(R.id.btnLoggout);
